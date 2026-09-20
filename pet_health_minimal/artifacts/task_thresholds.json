@@ -1,0 +1,7 @@
+{
+  "hypoxemia": 0.1,
+  "fever": 0.1,
+  "abnormal_resting_hr": 0.32,
+  "activity_reduction": 0.18,
+  "general_anomaly": 0.89
+}

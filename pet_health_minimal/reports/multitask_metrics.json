@@ -1,0 +1,209 @@
+{
+  "configuration": {
+    "data": {
+      "n_pets": 8,
+      "hours_per_pet": 12,
+      "sample_minutes": 1,
+      "seed": 42,
+      "missing_fraction": 0.004,
+      "outlier_fraction": 0.0015
+    },
+    "features": {
+      "window_minutes": 15,
+      "stride_minutes": 5,
+      "positive_window_fraction": 0.3
+    },
+    "deep": {
+      "batch_size": 128,
+      "epochs": 2,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "patience": 2,
+      "lstm_hidden": 32,
+      "tcn_channels": [
+        16,
+        32
+      ],
+      "dropout": 0.2
+    },
+    "train_fraction": 0.6,
+    "val_fraction": 0.2,
+    "random_state": 42
+  },
+  "split": {
+    "train_pet_ids": [
+      "P003",
+      "P004",
+      "P005",
+      "P007",
+      "P008"
+    ],
+    "validation_pet_ids": [
+      "P002",
+      "P006"
+    ],
+    "test_pet_ids": [
+      "P001"
+    ],
+    "train_windows": 710,
+    "validation_windows": 284,
+    "test_windows": 142,
+    "task_positive_rates": {
+      "hypoxemia": {
+        "train": 0.09718309859154929,
+        "validation": 0.07394366197183098,
+        "test": 0.1267605633802817
+      },
+      "fever": {
+        "train": 0.08732394366197183,
+        "validation": 0.09154929577464789,
+        "test": 0.07746478873239436
+      },
+      "abnormal_resting_hr": {
+        "train": 0.057746478873239436,
+        "validation": 0.09507042253521127,
+        "test": 0.08450704225352113
+      },
+      "activity_reduction": {
+        "train": 0.10422535211267606,
+        "validation": 0.07042253521126761,
+        "test": 0.07746478873239436
+      }
+    }
+  },
+  "tasks": {
+    "hypoxemia": {
+      "threshold": 0.1,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          124,
+          0
+        ],
+        [
+          0,
+          18
+        ]
+      ],
+      "support": 142,
+      "positive_rate": 0.1267605633802817,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0000000000000002
+    },
+    "fever": {
+      "threshold": 0.1,
+      "accuracy": 0.9929577464788732,
+      "precision": 0.9166666666666666,
+      "recall": 1.0,
+      "f1": 0.9565217391304348,
+      "confusion_matrix": [
+        [
+          130,
+          1
+        ],
+        [
+          0,
+          11
+        ]
+      ],
+      "support": 142,
+      "positive_rate": 0.07746478873239436,
+      "roc_auc": 0.9993060374739764,
+      "pr_auc": 0.9924242424242424
+    },
+    "abnormal_resting_hr": {
+      "threshold": 0.32,
+      "accuracy": 0.9366197183098591,
+      "precision": 0.5714285714285714,
+      "recall": 1.0,
+      "f1": 0.7272727272727273,
+      "confusion_matrix": [
+        [
+          121,
+          9
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "support": 142,
+      "positive_rate": 0.08450704225352113,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0
+    },
+    "activity_reduction": {
+      "threshold": 0.18,
+      "accuracy": 0.9929577464788732,
+      "precision": 1.0,
+      "recall": 0.9090909090909091,
+      "f1": 0.9523809523809523,
+      "confusion_matrix": [
+        [
+          131,
+          0
+        ],
+        [
+          1,
+          10
+        ]
+      ],
+      "support": 142,
+      "positive_rate": 0.07746478873239436,
+      "roc_auc": 0.9798750867453156,
+      "pr_auc": 0.9340909090909091
+    }
+  },
+  "general_anomaly": {
+    "threshold": 0.89,
+    "accuracy": 0.852112676056338,
+    "precision": 0.7586206896551724,
+    "recall": 0.8627450980392157,
+    "f1": 0.8073394495412844,
+    "confusion_matrix": [
+      [
+        77,
+        14
+      ],
+      [
+        7,
+        44
+      ]
+    ],
+    "support": 142,
+    "positive_rate": 0.3591549295774648,
+    "roc_auc": 0.9351432880844646,
+    "pr_auc": 0.8955102240841744
+  },
+  "training": {
+    "lstm_best_epoch": 2,
+    "lstm_history": [
+      {
+        "epoch": 1.0,
+        "train_loss": 1.245094250289487,
+        "val_macro_auc": 0.8251691167811592
+      },
+      {
+        "epoch": 2.0,
+        "train_loss": 1.138662806027372,
+        "val_macro_auc": 0.9227687950712281
+      }
+    ],
+    "tcn_best_epoch": 2,
+    "tcn_history": [
+      {
+        "epoch": 1.0,
+        "train_loss": 1.2527794767433489,
+        "val_macro_auc": 0.4742721662367051
+      },
+      {
+        "epoch": 2.0,
+        "train_loss": 1.0598777784428126,
+        "val_macro_auc": 0.7903222449937083
+      }
+    ]
+  }
+}

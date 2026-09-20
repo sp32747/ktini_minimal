@@ -1,0 +1,12 @@
+[
+  "heart_rate",
+  "spo2",
+  "temperature",
+  "log_light",
+  "gps_speed_mps",
+  "hr_delta_from_baseline",
+  "temp_delta_from_baseline",
+  "spo2_delta_from_baseline",
+  "hour_sin",
+  "hour_cos"
+]

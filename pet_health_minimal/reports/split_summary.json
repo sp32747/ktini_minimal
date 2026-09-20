@@ -1,0 +1,41 @@
+{
+  "train_pet_ids": [
+    "P003",
+    "P004",
+    "P005",
+    "P007",
+    "P008"
+  ],
+  "validation_pet_ids": [
+    "P002",
+    "P006"
+  ],
+  "test_pet_ids": [
+    "P001"
+  ],
+  "train_windows": 710,
+  "validation_windows": 284,
+  "test_windows": 142,
+  "task_positive_rates": {
+    "hypoxemia": {
+      "train": 0.09718309859154929,
+      "validation": 0.07394366197183098,
+      "test": 0.1267605633802817
+    },
+    "fever": {
+      "train": 0.08732394366197183,
+      "validation": 0.09154929577464789,
+      "test": 0.07746478873239436
+    },
+    "abnormal_resting_hr": {
+      "train": 0.057746478873239436,
+      "validation": 0.09507042253521127,
+      "test": 0.08450704225352113
+    },
+    "activity_reduction": {
+      "train": 0.10422535211267606,
+      "validation": 0.07042253521126761,
+      "test": 0.07746478873239436
+    }
+  }
+}
