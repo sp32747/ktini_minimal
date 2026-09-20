@@ -196,6 +196,12 @@ python run_pipeline.py --skip-generation --data-path data/my_training_data.csv
 
 ## Streamlit sensor testing UI
 
+The built-in sample picker includes **Six-pet demo (07_multiple_pets.csv)**
+and **Training sensor data**. All pet IDs are listed above the **Pet to inspect**
+selector. Validation applies to the selected pet, so sampling gaps in another
+pet's recording do not prevent switching pets. Click **Run predictions** after
+switching; results are labelled with the selected pet ID.
+
 From the project directory, install dependencies and start the app:
 
 ```powershell

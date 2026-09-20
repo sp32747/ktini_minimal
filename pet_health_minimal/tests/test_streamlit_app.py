@@ -39,3 +39,36 @@ def test_upload_empty_state():
     app.radio(key="source").set_value("Upload CSV").run()
     assert not app.exception
     assert any("Upload a CSV" in item.value for item in app.info)
+
+
+def test_uploaded_multiple_pets_switch_and_predict():
+    raw = pd.read_csv(ROOT / "data/test_samples/07_multiple_pets.csv")
+    app = AppTest.from_file(str(ROOT / "streamlit_app.py"), default_timeout=60).run()
+    app.radio(key="source").set_value("Upload CSV").run()
+    app.file_uploader[0].upload("07_multiple_pets.csv", raw.to_csv(index=False).encode(), "text/csv").run()
+    assert not app.exception
+    assert app.selectbox(key="pet").options == sorted(raw.pet_id.unique())
+    assert len(app.selectbox(key="pet").options) == 6
+    for pet in ["DEMO_FEVER", "DEMO_OXYGEN"]:
+        app.selectbox(key="pet").set_value(pet).run()
+        assert not any(metric.label == "Latest health score" for metric in app.metric)
+        app.button(key="run_predictions").click().run()
+        assert not app.error
+        assert not app.exception
+        assert app.session_state["predictions"].pet_id.unique().tolist() == [pet]
+        assert len(app.session_state["predictions"]) == 22
+
+
+def test_invalid_pet_does_not_hide_other_pets():
+    raw = pd.read_csv(ROOT / "data/test_samples/07_multiple_pets.csv")
+    raw = raw.drop(raw.index[raw.pet_id.eq("DEMO_ACTIVITY")][10])
+    app = AppTest.from_file(str(ROOT / "streamlit_app.py"), default_timeout=60).run()
+    app.radio(key="source").set_value("Paste CSV").run()
+    app.text_area(key="pasted_csv").set_value(raw.to_csv(index=False)).run()
+    app.selectbox(key="pet").set_value("DEMO_ACTIVITY").run()
+    assert app.error
+    assert len(app.selectbox(key="pet").options) == 6
+    app.selectbox(key="pet").set_value("DEMO_NORMAL").run()
+    assert not app.error
+    assert not app.exception
+    assert app.button(key="run_predictions")

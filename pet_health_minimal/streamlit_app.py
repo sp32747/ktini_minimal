@@ -34,6 +34,12 @@ def main() -> None:
     with st.sidebar:
         st.header("Test data")
         source = st.radio("Data source", ["Built-in sample", "Upload CSV", "Paste CSV"], key="source")
+        sample_options = {
+            "Six-pet demo (07_multiple_pets.csv)": ROOT / "data" / "test_samples" / "07_multiple_pets.csv",
+            "Training sensor data": ROOT / "data" / "synthetic_pet_sensor_data.csv",
+        }
+        if source == "Built-in sample":
+            sample_choice = st.selectbox("Sample file", list(sample_options), key="sample_file")
         st.caption("15 readings per window · New window every 5 readings · One reading per minute")
         st.download_button("Download CSV template", ",".join(REQUIRED_COLUMNS) + "\n", "sensor_template.csv", "text/csv")
         with st.expander("Input guide"):
@@ -45,43 +51,65 @@ def main() -> None:
 
     try:
         if source == "Built-in sample":
-            sample = ROOT / "data" / "synthetic_pet_sensor_data.csv"
+            sample = sample_options[sample_choice]
             if not sample.exists():
                 st.info("Sample data is missing. Upload a CSV or generate data with python run_pipeline.py --generate-only.")
                 return
             payload = sample.read_bytes()
+            source_name = sample.name
         elif source == "Upload CSV":
             uploaded = st.file_uploader("Upload sensor readings", type=["csv"])
             if uploaded is None:
                 st.info("Upload a CSV to preview readings and run predictions.")
                 return
             payload = uploaded.getvalue()
+            source_name = uploaded.name
         else:
             pasted = st.text_area("Paste CSV including the header", height=200, key="pasted_csv")
             if not pasted.strip():
                 st.info("Paste a CSV with at least 15 readings per pet.")
                 return
             payload = pasted.encode("utf-8")
+            source_name = "Pasted CSV"
         raw = pd.read_csv(io.BytesIO(payload), dtype={"pet_id": "string"})
-        frame, warnings = prepare_sensor_data(raw)
+        if "pet_id" not in raw:
+            raise ValueError("Missing required column: pet_id")
+        raw["pet_id"] = raw["pet_id"].astype("string").str.strip()
+        pet_ids = sorted(raw["pet_id"].dropna().loc[lambda s: s.ne("")].unique().tolist())
+        if not pet_ids:
+            raise ValueError("The CSV has no pet IDs. Every reading needs a pet_id.")
     except (ValueError, OSError, UnicodeError) as exc:
         st.error(str(exc))
         return
 
+    st.subheader("Choose a pet")
+    st.caption(f"Loaded: {source_name} | {len(pet_ids)} pets | {len(raw):,} readings")
+    st.write("Pets in this file: " + ", ".join(pet_ids))
+    if st.session_state.get("pet") not in pet_ids:
+        st.session_state["pet"] = pet_ids[0]
+    pet = st.selectbox("Pet to inspect", pet_ids, key="pet")
+    st.caption("Select a pet, then click Run predictions. Each pet has its own readings and results.")
+
+    # Invalidate previous results before validating a new pet or input file.
+    signature = (hashlib.sha256(payload).hexdigest(), pet)
+    if st.session_state.get("result_signature") != signature:
+        st.session_state.pop("predictions", None)
+    if raw["pet_id"].isna().any() or raw["pet_id"].eq("").any():
+        st.warning("Rows without a pet ID cannot be assigned to a pet and are excluded. Add their IDs to include them.")
+    try:
+        readings, warnings = prepare_sensor_data(raw.loc[raw["pet_id"] == pet].copy())
+    except ValueError as exc:
+        st.error(f"{pet}: {exc}")
+        st.info("Choose another pet above to continue testing, or correct this pet's readings.")
+        return
     for warning in warnings:
         st.warning(warning)
-    pet = st.selectbox("Pet to inspect", frame["pet_id"].unique().tolist(), key="pet")
-    readings = frame.loc[frame["pet_id"] == pet].copy()
     a, b, c = st.columns(3)
-    a.metric("Pets in file", frame["pet_id"].nunique())
+    a.metric("Pets in file", len(pet_ids))
     b.metric("Readings for this pet", f"{len(readings):,}")
     c.metric("Available windows", f"{1 + (len(readings) - 15) // 5:,}")
     st.caption(f"Recording: {readings['timestamp'].min()} → {readings['timestamp'].max()}")
 
-    # Match results to the exact input and pet, preventing stale output after edits.
-    signature = (hashlib.sha256(payload).hexdigest(), pet)
-    if st.session_state.get("result_signature") != signature:
-        st.session_state.pop("predictions", None)
     if st.button("Run predictions", type="primary", key="run_predictions"):
         st.session_state.pop("predictions", None)
         try:
@@ -108,6 +136,7 @@ def main() -> None:
             st.info("Choose a pet and select Run predictions to see its health-score trend and alerts.")
             return
         result = st.session_state["predictions"]
+        st.subheader(f"Results for {pet}")
         latest = result.iloc[-1]
         thresholds = st.session_state["thresholds"]
         a, b, c = st.columns(3)
