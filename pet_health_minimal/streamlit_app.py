@@ -26,8 +26,8 @@ STATUS_LABELS = {"STABLE_PATTERN": "Stable pattern", "WATCH_PATTERN": "Watch pat
 
 
 def main() -> None:
-    st.set_page_config(page_title="Pet Health · Sensor Lab", page_icon="🐾", layout="wide")
-    st.title("🐾 Pet Health · Sensor Lab")
+    st.set_page_config(page_title="KTINOSKARE", page_icon="🐾", layout="wide")
+    st.title("🐾 Pet Health · KTINOSKARE")
     st.write("Explore sensor history, test the saved models, and follow each pet's health patterns.")
     st.caption("Research prototype · Models trained on synthetic data · Scores are not veterinary diagnoses.")
 
