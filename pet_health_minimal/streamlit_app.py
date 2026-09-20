@@ -29,7 +29,7 @@ def main() -> None:
     st.set_page_config(page_title="KTINOSKARE", page_icon="🐾", layout="wide")
     st.title("🐾 Pet Health · KTINOSKARE")
     st.write("Explore sensor history, test the saved models, and follow each pet's health patterns.")
-    st.caption("Research prototype · Models trained on synthetic data · Scores are not veterinary diagnoses.")
+   # st.caption("Research prototype · Models trained on synthetic data · Scores are not veterinary diagnoses.")
 
     with st.sidebar:
         st.header("Test data")
