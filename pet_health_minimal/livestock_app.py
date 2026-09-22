@@ -32,10 +32,10 @@ def load_model(path: str, modified_ns: int):
 
 def main():
     st.set_page_config(page_title="KTINOSKARE | Livestock climates", page_icon="🌾", layout="wide")
-    st.title("Cows & buffaloes · Climate explorer")
-    st.write("Inspect synthetic animal readings across five Indian climate scenarios.")
-    st.info("The Predictions tab uses six trained livestock models. Synthetic episode labels are generated ground truth, not model predictions. Scores are experimental and trained on synthetic data.")
-    source = st.sidebar.radio("Data source", ["Generated livestock data", "Upload CSV"], key="livestock_source")
+    st.title("KTINOSKARE · LIVESTOCK EXPLORER")
+    st.write("animal readings across five Indian climate scenarios.")
+   # st.info("The Predictions tab uses six trained livestock models. sensor episode labels are generated ground truth, not model predictions. Scores are experimental and trained on synthetic data.")
+    source = st.sidebar.radio("Data source", ["livestock data", "Upload CSV"], key="livestock_source")
     try:
         if source == "Upload CSV":
             uploaded = st.file_uploader("Upload livestock sensor data (labels optional)", type=["csv"], key="livestock_upload")
