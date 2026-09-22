@@ -1,0 +1,1084 @@
+{
+  "source_rows": 129600,
+  "feature_count": 81,
+  "split_animals": {
+    "train": [
+      "COW_JK_003",
+      "BUFFALO_JK_001",
+      "COW_JK_002",
+      "COW_JK_001",
+      "BUFFALO_KA_001",
+      "BUFFALO_KA_003",
+      "COW_KA_002",
+      "BUFFALO_KA_002",
+      "BUFFALO_KL_003",
+      "BUFFALO_KL_001",
+      "BUFFALO_KL_002",
+      "COW_KL_002",
+      "BUFFALO_PB_003",
+      "COW_PB_001",
+      "COW_PB_002",
+      "BUFFALO_PB_002",
+      "COW_RJ_003",
+      "COW_RJ_002",
+      "COW_RJ_001",
+      "BUFFALO_RJ_003"
+    ],
+    "validation": [
+      "BUFFALO_JK_003",
+      "COW_KA_003",
+      "COW_KL_001",
+      "COW_PB_003",
+      "BUFFALO_RJ_002"
+    ],
+    "test": [
+      "BUFFALO_JK_002",
+      "COW_KA_001",
+      "COW_KL_003",
+      "BUFFALO_PB_001",
+      "BUFFALO_RJ_001"
+    ]
+  },
+  "split_windows": {
+    "train": 17240,
+    "validation": 4310,
+    "test": 4310
+  },
+  "stratification_attempts": 37,
+  "tasks": {
+    "hypoxemia": {
+      "threshold": 0.75,
+      "accuracy": 0.9995359628770302,
+      "precision": 0.974025974025974,
+      "recall": 1.0,
+      "f1": 0.9868421052631579,
+      "confusion_matrix": [
+        [
+          4233,
+          2
+        ],
+        [
+          0,
+          75
+        ]
+      ],
+      "support": 4310,
+      "positive_rate": 0.01740139211136891,
+      "roc_auc": 0.9999685163321527,
+      "pr_auc": 0.9982215897411282
+    },
+    "fever": {
+      "threshold": 0.48,
+      "accuracy": 0.9988399071925754,
+      "precision": 0.9375,
+      "recall": 1.0,
+      "f1": 0.967741935483871,
+      "confusion_matrix": [
+        [
+          4230,
+          5
+        ],
+        [
+          0,
+          75
+        ]
+      ],
+      "support": 4310,
+      "positive_rate": 0.01740139211136891,
+      "roc_auc": 0.9999937032664306,
+      "pr_auc": 0.9996467836257309
+    },
+    "abnormal_resting_hr": {
+      "threshold": 0.89,
+      "accuracy": 0.9948955916473318,
+      "precision": 0.9116465863453815,
+      "recall": 1.0,
+      "f1": 0.9537815126050421,
+      "confusion_matrix": [
+        [
+          4061,
+          22
+        ],
+        [
+          0,
+          227
+        ]
+      ],
+      "support": 4310,
+      "positive_rate": 0.05266821345707657,
+      "roc_auc": 0.9999848949280404,
+      "pr_auc": 0.9997301564163913
+    },
+    "activity_reduction": {
+      "threshold": 0.1,
+      "accuracy": 0.9997679814385151,
+      "precision": 0.9868421052631579,
+      "recall": 1.0,
+      "f1": 0.9933774834437086,
+      "confusion_matrix": [
+        [
+          4234,
+          1
+        ],
+        [
+          0,
+          75
+        ]
+      ],
+      "support": 4310,
+      "positive_rate": 0.01740139211136891,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0
+    },
+    "heat_stress": {
+      "threshold": 0.1,
+      "accuracy": 0.9863109048723898,
+      "precision": 0.9643102264927934,
+      "recall": 0.9950424929178471,
+      "f1": 0.9794353433252004,
+      "confusion_matrix": [
+        [
+          2846,
+          52
+        ],
+        [
+          7,
+          1405
+        ]
+      ],
+      "support": 4310,
+      "positive_rate": 0.32761020881670533,
+      "roc_auc": 0.9994217952402458,
+      "pr_auc": 0.9988055477828555
+    },
+    "cold_stress": {
+      "threshold": 0.27,
+      "accuracy": 0.988631090487239,
+      "precision": 0.8838862559241706,
+      "recall": 1.0,
+      "f1": 0.9383647798742139,
+      "confusion_matrix": [
+        [
+          3888,
+          49
+        ],
+        [
+          0,
+          373
+        ]
+      ],
+      "support": 4310,
+      "positive_rate": 0.08654292343387471,
+      "roc_auc": 0.9999325843155707,
+      "pr_auc": 0.999280818354576
+    }
+  },
+  "by_group": {
+    "species": {
+      "buffalo": {
+        "hypoxemia": {
+          "threshold": 0.75,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              2586,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 2586,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "fever": {
+          "threshold": 0.48,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              2586,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 2586,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "abnormal_resting_hr": {
+          "threshold": 0.89,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "confusion_matrix": [
+            [
+              2434,
+              0
+            ],
+            [
+              0,
+              152
+            ]
+          ],
+          "support": 2586,
+          "positive_rate": 0.05877803557617943,
+          "roc_auc": 1.0,
+          "pr_auc": 0.9999999999999999
+        },
+        "activity_reduction": {
+          "threshold": 0.1,
+          "accuracy": 0.9996133023975251,
+          "precision": 0.9868421052631579,
+          "recall": 1.0,
+          "f1": 0.9933774834437086,
+          "confusion_matrix": [
+            [
+              2510,
+              1
+            ],
+            [
+              0,
+              75
+            ]
+          ],
+          "support": 2586,
+          "positive_rate": 0.029002320185614848,
+          "roc_auc": 1.0,
+          "pr_auc": 0.9999999999999999
+        },
+        "heat_stress": {
+          "threshold": 0.1,
+          "accuracy": 0.9899458623356535,
+          "precision": 0.9698431845597105,
+          "recall": 0.9987577639751553,
+          "f1": 0.9840881272949816,
+          "confusion_matrix": [
+            [
+              1756,
+              25
+            ],
+            [
+              1,
+              804
+            ]
+          ],
+          "support": 2586,
+          "positive_rate": 0.31129156999226604,
+          "roc_auc": 0.9997244900450233,
+          "pr_auc": 0.9994024475666297
+        },
+        "cold_stress": {
+          "threshold": 0.27,
+          "accuracy": 0.9810518174787316,
+          "precision": 0.8838862559241706,
+          "recall": 1.0,
+          "f1": 0.9383647798742139,
+          "confusion_matrix": [
+            [
+              2164,
+              49
+            ],
+            [
+              0,
+              373
+            ]
+          ],
+          "support": 2586,
+          "positive_rate": 0.1442382057231245,
+          "roc_auc": 0.9998800652735662,
+          "pr_auc": 0.999280818354576
+        }
+      },
+      "cow": {
+        "hypoxemia": {
+          "threshold": 0.75,
+          "accuracy": 0.9988399071925754,
+          "precision": 0.974025974025974,
+          "recall": 1.0,
+          "f1": 0.9868421052631579,
+          "confusion_matrix": [
+            [
+              1647,
+              2
+            ],
+            [
+              0,
+              75
+            ]
+          ],
+          "support": 1724,
+          "positive_rate": 0.043503480278422275,
+          "roc_auc": 0.9999191429148979,
+          "pr_auc": 0.9982215897411282
+        },
+        "fever": {
+          "threshold": 0.48,
+          "accuracy": 0.9970997679814385,
+          "precision": 0.9375,
+          "recall": 1.0,
+          "f1": 0.967741935483871,
+          "confusion_matrix": [
+            [
+              1644,
+              5
+            ],
+            [
+              0,
+              75
+            ]
+          ],
+          "support": 1724,
+          "positive_rate": 0.043503480278422275,
+          "roc_auc": 0.9999838285829796,
+          "pr_auc": 0.9996467836257308
+        },
+        "abnormal_resting_hr": {
+          "threshold": 0.89,
+          "accuracy": 0.9872389791183295,
+          "precision": 0.7731958762886598,
+          "recall": 1.0,
+          "f1": 0.872093023255814,
+          "confusion_matrix": [
+            [
+              1627,
+              22
+            ],
+            [
+              0,
+              75
+            ]
+          ],
+          "support": 1724,
+          "positive_rate": 0.043503480278422275,
+          "roc_auc": 0.9998868000808571,
+          "pr_auc": 0.997560579687295
+        },
+        "activity_reduction": {
+          "threshold": 0.1,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              1724,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 1724,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "heat_stress": {
+          "threshold": 0.1,
+          "accuracy": 0.9808584686774942,
+          "precision": 0.9570063694267515,
+          "recall": 0.9901153212520593,
+          "f1": 0.9732793522267207,
+          "confusion_matrix": [
+            [
+              1090,
+              27
+            ],
+            [
+              6,
+              601
+            ]
+          ],
+          "support": 1724,
+          "positive_rate": 0.35208816705336426,
+          "roc_auc": 0.9991725895586997,
+          "pr_auc": 0.9984746055844756
+        },
+        "cold_stress": {
+          "threshold": 0.27,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              1724,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 1724,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        }
+      }
+    },
+    "region_id": {
+      "JK": {
+        "hypoxemia": {
+          "threshold": 0.75,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "fever": {
+          "threshold": 0.48,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "abnormal_resting_hr": {
+          "threshold": 0.89,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "activity_reduction": {
+          "threshold": 0.1,
+          "accuracy": 0.9988399071925754,
+          "precision": 0.9868421052631579,
+          "recall": 1.0,
+          "f1": 0.9933774834437086,
+          "confusion_matrix": [
+            [
+              786,
+              1
+            ],
+            [
+              0,
+              75
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.08700696055684455,
+          "roc_auc": 0.9999999999999999,
+          "pr_auc": 1.0
+        },
+        "heat_stress": {
+          "threshold": 0.1,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "cold_stress": {
+          "threshold": 0.27,
+          "accuracy": 0.9431554524361949,
+          "precision": 0.8838862559241706,
+          "recall": 1.0,
+          "f1": 0.9383647798742139,
+          "confusion_matrix": [
+            [
+              440,
+              49
+            ],
+            [
+              0,
+              373
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.43271461716937354,
+          "roc_auc": 0.9994572279149329,
+          "pr_auc": 0.999280818354576
+        }
+      },
+      "KA": {
+        "hypoxemia": {
+          "threshold": 0.75,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "fever": {
+          "threshold": 0.48,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "abnormal_resting_hr": {
+          "threshold": 0.89,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "confusion_matrix": [
+            [
+              787,
+              0
+            ],
+            [
+              0,
+              75
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.08700696055684455,
+          "roc_auc": 1.0,
+          "pr_auc": 0.9999999999999999
+        },
+        "activity_reduction": {
+          "threshold": 0.1,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "heat_stress": {
+          "threshold": 0.1,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "cold_stress": {
+          "threshold": 0.27,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        }
+      },
+      "KL": {
+        "hypoxemia": {
+          "threshold": 0.75,
+          "accuracy": 0.9976798143851509,
+          "precision": 0.974025974025974,
+          "recall": 1.0,
+          "f1": 0.9868421052631579,
+          "confusion_matrix": [
+            [
+              785,
+              2
+            ],
+            [
+              0,
+              75
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.08700696055684455,
+          "roc_auc": 0.9998305802626006,
+          "pr_auc": 0.9982215897411282
+        },
+        "fever": {
+          "threshold": 0.48,
+          "accuracy": 0.994199535962877,
+          "precision": 0.9375,
+          "recall": 1.0,
+          "f1": 0.967741935483871,
+          "confusion_matrix": [
+            [
+              782,
+              5
+            ],
+            [
+              0,
+              75
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.08700696055684455,
+          "roc_auc": 0.9999661160525201,
+          "pr_auc": 0.9996467836257309
+        },
+        "abnormal_resting_hr": {
+          "threshold": 0.89,
+          "accuracy": 0.974477958236659,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              840,
+              22
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "activity_reduction": {
+          "threshold": 0.1,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "heat_stress": {
+          "threshold": 0.1,
+          "accuracy": 0.9617169373549884,
+          "precision": 0.9570063694267515,
+          "recall": 0.9901153212520593,
+          "f1": 0.9732793522267207,
+          "confusion_matrix": [
+            [
+              228,
+              27
+            ],
+            [
+              6,
+              601
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.7041763341067285,
+          "roc_auc": 0.9963756177924218,
+          "pr_auc": 0.9984746055844756
+        },
+        "cold_stress": {
+          "threshold": 0.27,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        }
+      },
+      "PB": {
+        "hypoxemia": {
+          "threshold": 0.75,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "fever": {
+          "threshold": 0.48,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "abnormal_resting_hr": {
+          "threshold": 0.89,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "confusion_matrix": [
+            [
+              785,
+              0
+            ],
+            [
+              0,
+              77
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.08932714617169374,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0
+        },
+        "activity_reduction": {
+          "threshold": 0.1,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "heat_stress": {
+          "threshold": 0.1,
+          "accuracy": 0.9849187935034803,
+          "precision": 0.9696969696969697,
+          "recall": 0.9974025974025974,
+          "f1": 0.9833546734955185,
+          "confusion_matrix": [
+            [
+              465,
+              12
+            ],
+            [
+              1,
+              384
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.4466357308584687,
+          "roc_auc": 0.9997876337498979,
+          "pr_auc": 0.9997442348733075
+        },
+        "cold_stress": {
+          "threshold": 0.27,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        }
+      },
+      "RJ": {
+        "hypoxemia": {
+          "threshold": 0.75,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "fever": {
+          "threshold": 0.48,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "abnormal_resting_hr": {
+          "threshold": 0.89,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "confusion_matrix": [
+            [
+              787,
+              0
+            ],
+            [
+              0,
+              75
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.08700696055684455,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0
+        },
+        "activity_reduction": {
+          "threshold": 0.1,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "heat_stress": {
+          "threshold": 0.1,
+          "accuracy": 0.9849187935034803,
+          "precision": 0.9699769053117783,
+          "recall": 1.0,
+          "f1": 0.984759671746776,
+          "confusion_matrix": [
+            [
+              429,
+              13
+            ],
+            [
+              0,
+              420
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.4872389791183295,
+          "roc_auc": 0.9993320405085111,
+          "pr_auc": 0.9992886150248086
+        },
+        "cold_stress": {
+          "threshold": 0.27,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "confusion_matrix": [
+            [
+              862,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "support": 862,
+          "positive_rate": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic data and labels; metrics are not estimates of real-world accuracy.",
+    "Test animals are unseen, but all regions and shared regional weather appear in training.",
+    "Heat/cold targets derive from simulator exposure rules; this is not independent clinical validation.",
+    "Model probabilities and health score are not clinically calibrated."
+  ]
+}

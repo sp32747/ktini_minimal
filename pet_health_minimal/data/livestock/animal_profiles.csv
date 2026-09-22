@@ -1,0 +1,31 @@
+animal_id,species,region_id,region,state,climate_zone,age_years,weight_kg,baseline_hr,baseline_temp,baseline_spo2,shade_access_fraction,cooling_access_fraction,shelter_protection_fraction,injected_scenario
+BUFFALO_JK_001,buffalo,JK,Srinagar,Jammu and Kashmir,cold_winter,6.282749,458.622528,59.166785,38.318035,97.686637,0.623008,0.081003,0.215509,abnormal_resting_hr
+BUFFALO_JK_002,buffalo,JK,Srinagar,Jammu and Kashmir,cold_winter,4.464354,538.341183,59.615604,38.042819,97.235031,0.403123,0.366134,0.516798,activity_reduction
+BUFFALO_JK_003,buffalo,JK,Srinagar,Jammu and Kashmir,cold_winter,6.962567,496.985356,64.256796,38.200725,97.330698,0.645203,0.353221,0.205391,fever+hypoxemia
+BUFFALO_KA_001,buffalo,KA,Bengaluru,Karnataka,mild_plateau,5.183840,509.616628,60.758879,38.064846,97.522378,0.694209,0.174128,0.472446,reference
+BUFFALO_KA_002,buffalo,KA,Bengaluru,Karnataka,mild_plateau,4.391722,524.904703,69.627271,38.165286,97.861583,0.561663,0.423097,0.528093,fever
+BUFFALO_KA_003,buffalo,KA,Bengaluru,Karnataka,mild_plateau,7.622485,613.033452,59.383922,38.317329,97.439293,0.374618,0.190105,0.401539,hypoxemia
+BUFFALO_KL_001,buffalo,KL,Thrissur,Kerala,hot_humid,4.642147,549.892283,60.802079,38.209975,97.202633,0.761798,0.230702,0.492984,reference
+BUFFALO_KL_002,buffalo,KL,Thrissur,Kerala,hot_humid,4.628040,665.503711,62.203774,38.235351,97.652182,0.433903,0.135610,0.582120,fever
+BUFFALO_KL_003,buffalo,KL,Thrissur,Kerala,hot_humid,8.344494,551.951104,57.377785,38.238160,97.293455,0.663512,0.310286,0.672213,hypoxemia
+BUFFALO_PB_001,buffalo,PB,Ludhiana,Punjab,warm_plains,8.270062,586.657487,61.523346,37.966610,97.784904,0.321331,0.525434,0.456315,abnormal_resting_hr
+BUFFALO_PB_002,buffalo,PB,Ludhiana,Punjab,warm_plains,7.269087,582.156809,64.315563,38.183868,97.493247,0.706604,0.733844,0.380939,activity_reduction
+BUFFALO_PB_003,buffalo,PB,Ludhiana,Punjab,warm_plains,7.477190,608.127674,59.712079,38.051582,96.821824,0.729218,0.120445,0.349552,fever+hypoxemia
+BUFFALO_RJ_001,buffalo,RJ,Jaisalmer,Rajasthan,hot_arid,7.028380,533.947757,59.872064,37.951739,98.492231,0.751172,0.144954,0.228917,abnormal_resting_hr
+BUFFALO_RJ_002,buffalo,RJ,Jaisalmer,Rajasthan,hot_arid,6.213180,583.282288,65.741511,38.508308,97.156633,0.815429,0.622753,0.509732,activity_reduction
+BUFFALO_RJ_003,buffalo,RJ,Jaisalmer,Rajasthan,hot_arid,4.181790,508.254388,57.315747,38.151944,97.477752,0.530217,0.365534,0.518921,fever+hypoxemia
+COW_JK_001,cow,JK,Srinagar,Jammu and Kashmir,cold_winter,5.548171,512.148557,61.390492,38.582115,98.046988,0.397053,0.336715,0.361393,reference
+COW_JK_002,cow,JK,Srinagar,Jammu and Kashmir,cold_winter,4.035961,396.844650,64.507952,38.365271,97.714364,0.301605,0.068083,0.356602,fever
+COW_JK_003,cow,JK,Srinagar,Jammu and Kashmir,cold_winter,5.129798,398.047012,57.176292,38.955744,98.156503,0.773875,0.441946,0.750329,hypoxemia
+COW_KA_001,cow,KA,Bengaluru,Karnataka,mild_plateau,8.487098,455.559178,64.766782,38.464632,97.498295,0.588832,0.055981,0.780974,abnormal_resting_hr
+COW_KA_002,cow,KA,Bengaluru,Karnataka,mild_plateau,4.336139,380.237831,60.420629,38.356681,97.348580,0.443242,0.671665,0.299307,activity_reduction
+COW_KA_003,cow,KA,Bengaluru,Karnataka,mild_plateau,5.769963,458.351385,71.911991,38.346125,97.308193,0.329651,0.627213,0.554572,fever+hypoxemia
+COW_KL_001,cow,KL,Thrissur,Kerala,hot_humid,4.453270,455.630232,63.569872,38.309827,97.001987,0.251025,0.180561,0.631875,abnormal_resting_hr
+COW_KL_002,cow,KL,Thrissur,Kerala,hot_humid,8.830367,477.969842,69.466524,38.411695,97.826722,0.804368,0.738959,0.840740,activity_reduction
+COW_KL_003,cow,KL,Thrissur,Kerala,hot_humid,7.894337,441.537315,65.747658,38.642348,97.768293,0.488368,0.240462,0.383591,fever+hypoxemia
+COW_PB_001,cow,PB,Ludhiana,Punjab,warm_plains,8.469955,365.298950,62.082757,38.207293,98.585689,0.208151,0.398106,0.558891,reference
+COW_PB_002,cow,PB,Ludhiana,Punjab,warm_plains,7.317330,360.122362,62.301833,38.662876,97.636885,0.233582,0.531620,0.286568,fever
+COW_PB_003,cow,PB,Ludhiana,Punjab,warm_plains,8.252900,465.267316,62.728103,38.460503,97.901950,0.606365,0.093488,0.815796,hypoxemia
+COW_RJ_001,cow,RJ,Jaisalmer,Rajasthan,hot_arid,3.716111,408.070290,55.956112,38.553029,97.472699,0.249036,0.478198,0.707870,reference
+COW_RJ_002,cow,RJ,Jaisalmer,Rajasthan,hot_arid,7.561114,476.521812,63.616794,38.667452,96.823187,0.614159,0.423441,0.445668,fever
+COW_RJ_003,cow,RJ,Jaisalmer,Rajasthan,hot_arid,4.515201,462.962107,60.482501,38.630405,97.065934,0.340410,0.710212,0.714600,hypoxemia

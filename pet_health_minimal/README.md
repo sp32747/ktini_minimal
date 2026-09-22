@@ -20,6 +20,35 @@ It then combines those signals into a **pet-specific longitudinal health score**
 
 > This project is an engineering/ML prototype. Synthetic labels and scores are not veterinary diagnoses or clinically validated thresholds.
 
+## Cow and buffalo climate dataset
+
+A separate livestock generator creates **15 cows + 15 buffaloes** across five
+Indian climate scenarios (three of each species per region). It generates
+72 hours of one-minute readings per animal, including ambient temperature,
+humidity, wind, THI, and synthetic heat/cold labels alongside sensor data.
+
+```powershell
+.\.venv\Scripts\python.exe generate_livestock_data.py
+.\.venv\Scripts\python.exe -m streamlit run livestock_app.py
+```
+
+See [the livestock dataset guide](data/livestock/README.md) for assumptions,
+sources, schema and outputs, or open [the notebook](petcare/data_synthesizer.ipynb).
+The livestock app displays observations, synthetic labels, and predictions from
+six separate livestock XGBoost models. Train and run label-free inference with:
+
+```powershell
+.\.venv\Scripts\python.exe train_livestock.py
+.\.venv\Scripts\python.exe predict_livestock.py data/livestock/livestock_inference_input.csv
+```
+
+Select a region, species and animal in `livestock_app.py`, then click
+**Run livestock predictions** in the **Predictions** tab. You can also upload
+an unlabelled livestock CSV. Models are stored in `artifacts/livestock/` and
+evaluation reports in `reports/livestock/`, separately from dog/cat artifacts.
+See [livestock model details](docs/livestock_model.md) for features, validation,
+health-score rules and limitations.
+
 ## Architecture
 
 ```text

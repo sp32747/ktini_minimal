@@ -1,0 +1,98 @@
+{
+  "synthetic": true,
+  "animals": 30,
+  "rows": 129600,
+  "configuration_overrides": {
+    "cows": 15,
+    "buffaloes": 15,
+    "hours": 72,
+    "sample_minutes": 1,
+    "seed": 20260922
+  },
+  "regions": [
+    {
+      "region_id": "RJ",
+      "location": "Jaisalmer",
+      "state": "Rajasthan",
+      "climate": "hot_arid",
+      "start_date": "2026-05-01",
+      "temperature_min_c": 24,
+      "temperature_max_c": 44,
+      "mean_humidity_pct": 25,
+      "mean_wind_mps": 3.0,
+      "latitude": 26.9157,
+      "longitude": 70.9083
+    },
+    {
+      "region_id": "KL",
+      "location": "Thrissur",
+      "state": "Kerala",
+      "climate": "hot_humid",
+      "start_date": "2026-07-01",
+      "temperature_min_c": 25,
+      "temperature_max_c": 34,
+      "mean_humidity_pct": 85,
+      "mean_wind_mps": 1.4,
+      "latitude": 10.5276,
+      "longitude": 76.2144
+    },
+    {
+      "region_id": "PB",
+      "location": "Ludhiana",
+      "state": "Punjab",
+      "climate": "warm_plains",
+      "start_date": "2026-05-01",
+      "temperature_min_c": 18,
+      "temperature_max_c": 37,
+      "mean_humidity_pct": 50,
+      "mean_wind_mps": 2.0,
+      "latitude": 30.901,
+      "longitude": 75.8573
+    },
+    {
+      "region_id": "KA",
+      "location": "Bengaluru",
+      "state": "Karnataka",
+      "climate": "mild_plateau",
+      "start_date": "2026-02-01",
+      "temperature_min_c": 16,
+      "temperature_max_c": 29,
+      "mean_humidity_pct": 60,
+      "mean_wind_mps": 2.1,
+      "latitude": 12.9716,
+      "longitude": 77.5946
+    },
+    {
+      "region_id": "JK",
+      "location": "Srinagar",
+      "state": "Jammu and Kashmir",
+      "climate": "cold_winter",
+      "start_date": "2026-01-01",
+      "temperature_min_c": -6,
+      "temperature_max_c": 10,
+      "mean_humidity_pct": 70,
+      "mean_wind_mps": 2.5,
+      "latitude": 34.0837,
+      "longitude": 74.7973
+    }
+  ],
+  "timezone": "Asia/Kolkata",
+  "temperature_column": "synthetic body/core-like temperature, not ambient or skin temperature",
+  "thi_formula": "0.8*T + RH/100*(T-14.4) + 46.4; T in Celsius, RH in percent",
+  "targets": [
+    "hypoxemia",
+    "fever",
+    "abnormal_resting_hr",
+    "activity_reduction",
+    "heat_stress",
+    "cold_stress"
+  ],
+  "limitations": [
+    "Region envelopes and physiology coefficients are chosen simulation assumptions, not weather observations or validated veterinary thresholds.",
+    "Different regional start dates represent contrasting seasonal scenarios, not simultaneous nationwide weather.",
+    "Adult female cows and river-type buffaloes; breeds, pregnancy, lactation stage, feed and disease prevalence are not calibrated.",
+    "Heat and cold targets are generated from synthetic exposure rules; they are not independently annotated outcomes.",
+    "SpO2 and respiration are idealized signals; real hardware availability and measurement validity must be assessed.",
+    "The existing dog/cat model feature mapping, tasks and health-score weights are not suitable livestock models."
+  ]
+}

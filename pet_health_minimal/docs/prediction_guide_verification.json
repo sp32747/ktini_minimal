@@ -1,0 +1,84 @@
+[
+  {
+    "file": "01_normal_pattern.csv",
+    "accepted": true,
+    "pets": 1,
+    "windows": 22,
+    "warnings": []
+  },
+  {
+    "file": "02_low_oxygen.csv",
+    "accepted": true,
+    "pets": 1,
+    "windows": 22,
+    "warnings": []
+  },
+  {
+    "file": "03_fever_pattern.csv",
+    "accepted": true,
+    "pets": 1,
+    "windows": 22,
+    "warnings": []
+  },
+  {
+    "file": "04_high_resting_hr.csv",
+    "accepted": true,
+    "pets": 1,
+    "windows": 22,
+    "warnings": []
+  },
+  {
+    "file": "05_reduced_activity.csv",
+    "accepted": true,
+    "pets": 1,
+    "windows": 22,
+    "warnings": []
+  },
+  {
+    "file": "06_combined_patterns.csv",
+    "accepted": true,
+    "pets": 1,
+    "windows": 22,
+    "warnings": []
+  },
+  {
+    "file": "07_multiple_pets.csv",
+    "accepted": true,
+    "pets": 6,
+    "windows": 132,
+    "warnings": []
+  },
+  {
+    "file": "08_missing_values.csv",
+    "accepted": true,
+    "pets": 1,
+    "windows": 22,
+    "warnings": [
+      "6 missing, nonnumeric, or out-of-range sensor values will be interpolated within each pet's history."
+    ]
+  },
+  {
+    "file": "09_minimal_columns.csv",
+    "accepted": true,
+    "pets": 1,
+    "windows": 22,
+    "warnings": [
+      "Missing baselines will use each pet's medians from this file. Short or abnormal recordings can give misleading baselines."
+    ]
+  },
+  {
+    "file": "invalid/missing_spo2_column.csv",
+    "accepted": false,
+    "reason": "Missing required columns: spo2"
+  },
+  {
+    "file": "invalid/sampling_gap.csv",
+    "accepted": false,
+    "reason": "Readings must be exactly one minute apart per pet. Resample to one-minute intervals and review gaps before uploading."
+  },
+  {
+    "file": "invalid/too_few_readings.csv",
+    "accepted": false,
+    "reason": "At least 15 readings are required for every pet. Too short: DEMO_NORMAL"
+  }
+]

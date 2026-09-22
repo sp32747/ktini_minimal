@@ -1,0 +1,11 @@
+region_id,region,climate_zone,species,animals,readings,ambient_min_c,ambient_max_c,mean_humidity_pct,heat_stress_fraction,cold_stress_fraction
+JK,Srinagar,cold_winter,buffalo,3,12960,-7.1226,10.9295,69.9722,0.0000,0.4657
+JK,Srinagar,cold_winter,cow,3,12960,-7.1226,10.9295,69.9722,0.0000,0.4286
+KA,Bengaluru,mild_plateau,buffalo,3,12960,16.1577,30.2262,59.9613,0.0833,0.0000
+KA,Bengaluru,mild_plateau,cow,3,12960,16.1577,30.2262,59.9613,0.0000,0.0000
+KL,Thrissur,hot_humid,buffalo,3,12960,22.8754,34.9742,84.9948,0.7246,0.0000
+KL,Thrissur,hot_humid,cow,3,12960,22.8754,34.9742,84.9948,0.6819,0.0000
+PB,Ludhiana,warm_plains,buffalo,3,12960,17.4463,37.8469,50.0539,0.4066,0.0000
+PB,Ludhiana,warm_plains,cow,3,12960,17.4463,37.8469,50.0539,0.4258,0.0000
+RJ,Jaisalmer,hot_arid,buffalo,3,12960,22.4292,45.9017,24.9301,0.4576,0.0000
+RJ,Jaisalmer,hot_arid,cow,3,12960,22.4292,45.9017,24.9301,0.5022,0.0000
